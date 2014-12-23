@@ -5,20 +5,20 @@ This page provides high-level documentation for the `com.ibm.wala.util` sub-proj
 Table of Contents
 =================
 
-    * [Integer Sets](#integer-sets)
-      * [Union-Find](#union-find)
-      * [Mapping to integers](#mapping-to-integers)
-    * [Graphs](#graphs)
-      * [Data Structures](#data-structures)
-      * [Graph Algorithms](#graph-algorithms)
-    * [Fixed Point Solvers](#fixed-point-solvers)
-      * [General Infrastructure](#general-infrastructure)
-        * [Booleans and bit vectors](#booleans-and-bit-vectors)
-      * [Dataflow Solver](#dataflow-solver)
-    * [Tabulation Solver](#tabulation-solver)
-    * [Other utilities](#other-utilities)
-      * [Collections](#collections)
-      * [Progress monitors](#progress-monitors)
+  * [Integer Sets](#integer-sets)
+    * [Union-Find](#union-find)
+    * [Mapping to integers](#mapping-to-integers)
+  * [Graphs](#graphs)
+    * [Data Structures](#data-structures)
+    * [Graph Algorithms](#graph-algorithms)
+  * [Fixed Point Solvers](#fixed-point-solvers)
+    * [General Infrastructure](#general-infrastructure)
+      * [Booleans and bit vectors](#booleans-and-bit-vectors)
+    * [Dataflow Solver](#dataflow-solver)
+  * [Tabulation Solver](#tabulation-solver)
+  * [Other utilities](#other-utilities)
+    * [Collections](#collections)
+    * [Progress monitors](#progress-monitors)
 
 ## Integer Sets
 
