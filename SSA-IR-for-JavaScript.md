@@ -1,0 +1,1 @@
+This page documents the SSA IR instructions generated for JavaScript code by WALA.
