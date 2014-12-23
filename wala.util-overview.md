@@ -2,8 +2,6 @@
 
 This page provides high-level documentation for the `com.ibm.wala.util` sub-project of WALA.  This is a work in progress!
 
-[[_TOC_]]
-
 ## Integer Sets
 
 ### Union-Find
