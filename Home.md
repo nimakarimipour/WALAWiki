@@ -1,0 +1,1 @@
+Welcome to the WALA wiki!  Eventually, we need to consolidate documentation here with that on [the main web site](http://wala.sourceforge.net), but in the meantime, this is a place for WALA users to collaboratively create some documentation to help the rest of the community.
