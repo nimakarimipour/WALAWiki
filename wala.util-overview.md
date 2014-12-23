@@ -1,8 +1,6 @@
 This page provides high-level documentation for the `com.ibm.wala.util` sub-project of WALA.  This is a work in progress!
 
-Table of Contents
-=================
-
+## Table of Contents
   * [Integer Sets](#integer-sets)
     * [Union-Find](#union-find)
     * [Mapping to integers](#mapping-to-integers)
