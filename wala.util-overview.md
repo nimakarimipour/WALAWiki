@@ -1,5 +1,7 @@
 # Documentation for `com.ibm.wala.util`
 
+This page provides high-level documentation for the `com.ibm.wala.util` sub-project of WALA.  This is a work in progress!  
+
 ## Integer Sets
 
 ### Union-Find
@@ -17,7 +19,7 @@
 
 ## Fixed Point Solvers
 
-NOTE: For many dataflow analyses, WALA provides specialized solvers that can be used directly.  If you want to compute a dataflow analysis over a standard Killdall framework of an underlying flow graph and some transfer functions, use the specialized `DataflowSolver` type, which is documented below.  For tabulation-style inter-procedural dataflow analyses (e.g., IFDS problems TODO link RHS), use the tabulation solver (TODO: link to documentation).  To use the WALA solver for other fixed-point problems, read on to learn about the more general infrastructure.  
+For many dataflow analyses, WALA provides specialized solvers that can be used directly.  If you want to compute a dataflow analysis over a standard Killdall framework of an underlying flow graph and some transfer functions, use the specialized `DataflowSolver` type, which is documented below.  For tabulation-style inter-procedural dataflow analyses (e.g., IFDS problems), use the tabulation solver (TODO: link to documentation).  To use the WALA solver for other fixed-point problems, read on to learn about the more general infrastructure.  
 
 ### General Infrastructure
 
