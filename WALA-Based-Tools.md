@@ -7,7 +7,7 @@ These are tools / libraries created by other groups that build on or enhance WAL
 [Hopper](https://github.com/cuplv/hopper) is a goal-directed static analysis tool for languages that run on the JVM.
 
 #### Joana
-[Joana](https://github.com/jgf/joana) is an information-flow control analysis framework for Java.
+[Joana](https://github.com/jgf/joana) is an information-flow control analysis framework for Java.  There is also an [example repository] showing how to apply Joana to Android code.
 
 #### Keshmesh
 [Keshmesh](http://keshmesh.cs.illinois.edu/) is a static analysis framework for detecting and fixing concurrency bug patterns in Java programs.
