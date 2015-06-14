@@ -1,7 +1,7 @@
 These are tools / libraries created by other groups that build on or enhance WALA. Note that these tools are supported by the authors, *not* by the WALA maintainers. The tools are open source unless otherwise noted (but please check yourself if the license is suitable for your purposes).  Feel free to add links to other tools that we have missed.  Several of these tools were presented at the [2015 Workshop on WALA](http://researcher.watson.ibm.com/researcher/view_group.php?id=5750).
 
-#### WALAFacade
-[WALAFacade](https://github.com/cos/WALAFacade) is a Scala library that enables more idiomatic use of WALA from Scala code.
+#### Scala Libraries
+[WALAFacade](https://github.com/cos/WALAFacade) is a Scala library that enables more idiomatic use of WALA from Scala code.  The CUPLV [walautil](https://github.com/cuplv/walautil) project is a collection of utility methods for WALA projects written in Scala.
 
 #### Hopper
 [Hopper](https://github.com/cuplv/hopper) is a goal-directed static analysis tool for languages that run on the JVM.
