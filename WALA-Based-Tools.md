@@ -12,9 +12,6 @@ These are tools / libraries created by other groups that build on or enhance WAL
 #### Keshmesh
 [Keshmesh](http://keshmesh.cs.illinois.edu/) is a static analysis framework for detecting and fixing concurrency bug patterns in Java programs.
 
-#### SOTER
-[SOTER](http://osl.cs.uiuc.edu/software/soter/) is an extensible static analysis and transformation tool that facilitates message passing in actor programs. (Note that SOTER is available for education, research, and non-profit purposes only.)
-
 #### JFlow
 [JFlow](https://github.com/vazexqi/JFlow) provides interactive source-to-source transformations for flow-based paralellism.
 
