@@ -18,6 +18,9 @@ This page provides high-level documentation for the `com.ibm.wala.util` sub-proj
 
 ## Integer Sets
 
+* IntSet
+* OrdinalSetMapping / MutableMapping
+
 ### Union-Find
 
 * IntegerUnionFind
