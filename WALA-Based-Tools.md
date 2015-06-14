@@ -12,6 +12,12 @@ These are tools / libraries created by other groups that build on or enhance WAL
 #### Joana
 [Joana](https://github.com/jgf/joana) is an information-flow control analysis framework for Java.  There is also an [example repository](https://github.com/mohrm/android-analyzer) showing how to apply Joana to Android code.
 
+#### IDE
+[IDE](https://github.com/amaurremi/IDE) is an implementation of the Interprocedural Distributive Environment (IDE) algorithm for WALA.
+
+#### HybriDroid
+[HybriDroid](https://github.com/SunghoLee/WALA/tree/master/HybriDroid/src/kr/ac/kaist/hybridroid/callgraph) is an implementation of hybrid Dalvik and JavaScript analysis for WALA.
+
 #### Keshmesh
 [Keshmesh](http://keshmesh.cs.illinois.edu/) is a static analysis framework for detecting and fixing concurrency bug patterns in Java programs.
 
