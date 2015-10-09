@@ -9,6 +9,8 @@ This will update various metadata files to have the new version number.  Once th
 git tag R_1.3.8
 git push origin R_1.3.8
 ```
+**TODO: add instructions for pushing new release to Maven Central**
+
 Now that we've tagged the release, we should update the version number on master to return to a SNAPSHOT build using the `change-version.py` script again, e.g.:
 ```
 ./change-version.py 1.3.8 1.3.9-SNAPSHOT
