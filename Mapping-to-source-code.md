@@ -71,7 +71,7 @@ if (s.getKind() == Statement.Kind.NORMAL) {
 </pre>`
 
 This is useful when investigating the output of
-[slicing](/UserGuide:Slicer "wikilink").
+[[slicing|Slicer]].
 
 Getting the .jar file for an IClass
 -----------------------------------
