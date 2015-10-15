@@ -1,8 +1,3 @@
-[wala.core technical overview]
-
-Naming Java entities
-====================
-
 In bytecode, there can be more than one name for a single given entity that arises at runtime.
 
 For example, suppose you have `class A extends class B extends java.lang.Object`, and neither `A` nor `B` overrides `java.lang.Object.toString()`.
