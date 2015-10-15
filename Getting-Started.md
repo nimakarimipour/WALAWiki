@@ -93,7 +93,7 @@ We will now step through a few example programs, which will analyze the JLex pro
 
 -   **Tip**: We recommend you use the [launchers](/Eclipse:Launcher "wikilink") we have provided for each example program. If you create your own launch configuration, be sure to specify an adequate heap size, such as 800MB via VM argument `-Xmx800MB`.
 
-### Example 1: [SWTTypeHierarchy](http://wala.sourceforge.net/javadocs/com.ibm.wala.core.tests/com/ibm/wala/examples/drivers/SWTTypeHierarchy.html)
+### Example 1: [SWTTypeHierarchy](http://wala.sourceforge.net/javadocs/trunk/com/ibm/wala/examples/drivers/SWTTypeHierarchy.html)
 
 Our first example program will do the following:
 
@@ -102,9 +102,9 @@ Our first example program will do the following:
 
 Use the [launcher](/Eclipse:Launcher "wikilink") `SWTTypeHierarchy`, found within `com.ibm.wala.ide.tests`. View and edit launchers via Eclipe's `Run -> Run Configurations...` drop-down menu. The launcher should already be listed under "Java Applications" in the list of launchers. Click the "Run" button to run the program; this should just work if you copied JLex.jar to the workspace as indicated above. If successful, you should see a new window pop up with a tree view of the class hierarchy of JLex.
 
-Problems? See [UserGuide:Troubleshooting](/UserGuide:Troubleshooting "wikilink").
+Problems? See [[Troubleshooting]].
 
-### Example 2: [PDFTypeHierarchy](http://wala.sourceforge.net/javadocs/com.ibm.wala.core.tests/com/ibm/wala/examples/drivers/PDFTypeHierarchy.html)
+### Example 2: [PDFTypeHierarchy](http://wala.sourceforge.net/javadocs/trunk/com/ibm/wala/examples/drivers/PDFTypeHierarchy.html)
 
 This example builds a Java type hierarchy, renders a vizualization of the tree using [dot](http://www.graphviz.org/), and visualizes it using a PDF viewer.
 
@@ -114,7 +114,7 @@ Next, edit the `com.ibm.wala.core.tests/dat/wala.examples.properties` file to ha
 
 Now run the `PDFTypeHierarchy` [launcher](/Eclipse:Launcher "wikilink"). This program should soon launch a viewer for a PDF file representing the type hierarchy.
 
-Problems? See [UserGuide:Troubleshooting](/UserGuide:Troubleshooting "wikilink").
+Problems? See [[Troubleshooting]].
 
 -   **Tip**: dot will choke on large graphs. Don't do it.
 
@@ -124,11 +124,11 @@ The `com.ibm.wala.core.tests` project contains a number of other simple driver p
 
 As of this writing, in addition to Examples 1-2, available example drivers include:
 
--   [`ClassPrinter`](http://wala.sourceforge.net/javadocs/com.ibm.wala.shrike/com/ibm/wala/shrikeBT/shrikeCT/tools/ClassPrinter.html) : the WALA (Shrike) equivalent of `javap` (in the shrike project)
--   [`PDFCallGraph`](http://wala.sourceforge.net/javadocs/com.ibm.wala.core.tests/com/ibm/wala/examples/drivers/PDFCallGraph.html): builds a call graph and shows a PDF represention generated with dot
--   [`PDFWalaIR`](http://wala.sourceforge.net/javadocs/com.ibm.wala.core.tests/com/ibm/wala/examples/drivers/PDFWalaIR.html): builds a WALA IR for a method and shows a PDF representation generated with dot
--   [`SWTCallGraph`](http://wala.sourceforge.net/javadocs/com.ibm.wala.core.tests/com/ibm/wala/examples/drivers/SWTCallGraph.html): builds a call graph and spawns an SWT TreeViewer to browse it
--   [`SWTPointsTo`](http://wala.sourceforge.net/javadocs/com.ibm.wala.core.tests/com/ibm/wala/examples/drivers/SWTPointsTo.html): performs pointer analysis and spawns an SWT TreeViewer to browse the results
+-   [`ClassPrinter`](http://wala.sourceforge.net/javadocs/trunk/com/ibm/wala/shrikeBT/shrikeCT/tools/ClassPrinter.html) : the WALA (Shrike) equivalent of `javap` (in the shrike project)
+-   [`PDFCallGraph`](http://wala.sourceforge.net/javadocs/trunk/com/ibm/wala/examples/drivers/PDFCallGraph.html): builds a call graph and shows a PDF represention generated with dot
+-   [`PDFWalaIR`](http://wala.sourceforge.net/javadocs/trunk/com/ibm/wala/examples/drivers/PDFWalaIR.html): builds a WALA IR for a method and shows a PDF representation generated with dot
+-   [`SWTCallGraph`](http://wala.sourceforge.net/javadocs/trunk/com/ibm/wala/examples/drivers/SWTCallGraph.html): builds a call graph and spawns an SWT TreeViewer to browse it
+-   [`SWTPointsTo`](http://wala.sourceforge.net/javadocs/trunk/com/ibm/wala/examples/drivers/SWTPointsTo.html): performs pointer analysis and spawns an SWT TreeViewer to browse the results
 
 Getting started with WALA CAst, the front end for multiple source languages
 ---------------------------------------------------------------------------
@@ -137,21 +137,16 @@ WALA now includes the WALA Common Abstract Syntax Tree (CAst) System, a front en
 
 Due to these dependencies and the fact that we cannot distribute these prerequisites directly, there are a couple of build steps needed to get CAst working for you. For both front ends, you must obtain the core CAst projects below from the `trunk` of WALA's subversion; you also need the WALA core projects described above. You can omit all the test projects, but this is highly discouraged.
 
-` * com.ibm.wala.cast (`[`javadoc`](http://wala.sourceforge.net/javadocs/com.ibm.wala.cast)`) (`[`source`](https://github.com/wala/WALA/tree/master/com.ibm.wala.cast)`)`
-`   o The core CAst System machinery`
-` * com.ibm.wala.cast.test (`[`javadoc`](http://wala.sourceforge.net/javadocs/com.ibm.wala.cast.test)`) (`[`source`](https://github.com/wala/WALA/tree/master/com.ibm.wala.cast.test)`)`
-`   o Test support for the CAst`
+- `com.ibm.wala.cast` -- The core CAst System machinery
+- `com.ibm.wala.cast.test` -- Test support for the CAst
 
 ### The Java Source Front End
 
 The Java front end has two implementations: one makes use of [`polyglot`](http://www.cs.cornell.edu/projects/polyglot/) to parse Java and generate Abstract Syntax Trees (ASTs); the other is based on the Eclipse JDT and was contributed by Evan Battaglia from Berkeley. For either one, you need the following Java source language support projects, along with the CAst core and WALA core projects.
 
-` * com.ibm.wala.cast.java (`[`javadoc`](http://wala.sourceforge.net/javadocs/com.ibm.wala.cast.java)`) (`[`source`](https://github.com/wala/WALA/tree/master/com.ibm.wala.cast.java)`)`
-`   o The CAst-based Java front end`
-` * com.ibm.wala.cast.java.test (`[`javadoc`](http://wala.sourceforge.net/javadocs/com.ibm.wala.cast.java.test)`) (`[`source`](https://github.com/wala/WALA/tree/master/com.ibm.wala.cast.java.test)`)`
-`   o Tests for the CAst-based Java front end`
-` * com.ibm.wala.cast.java.test.data (`[`javadoc`](http://wala.sourceforge.net/javadocs/com.ibm.wala.cast.java.test.data)`) (`[`source`](https://github.com/wala/WALA/tree/master/com.ibm.wala.cast.java.test.data)`)`
-`   o Test data for the CAst-based Java front end`
+- `com.ibm.wala.cast.java` -- The CAst-based Java front end
+- `com.ibm.wala.cast.java.test` -- Tests for the CAst-based Java front end
+- `com.ibm.wala.cast.java.test.data` -- Test data for the CAst-based Java front end
 
 The test data project requires some steps to build. For legal reasons, we do not include some test program source in the project, so you must obtain that separately. We do provide some support scripts to help. The following ought to work:
 
@@ -163,23 +158,19 @@ The Eclipse JDT based front end is in the projects given below. Note that due to
 
 Note that the regression tests in com.ibm.wala.cast.java.test run as JUnit Plugin tests. If you followed step 3 in the instructions above to export the zip file, the tests should be able to construct the needed workspace automatically. Hence, you should just be able to run them as plugin tests without any further setup.
 
-` * com.ibm.wala.ide.jdt (`[`source`](https://github.com/wala/WALA/tree/master/com.ibm.wala.ide.jdt)`)`
-`   o The JDT- and CAst-based Java front end`
-` * com.ibm.wala.ide.jdt.test (`[`source`](https://github.com/wala/WALA/tree/master/com.ibm.wala.ide.jdt.test)`)`
-`   o Tests for the JDT front end`
+- `com.ibm.wala.ide.jdt` -- The JDT- and CAst-based Java front end
+- `com.ibm.wala.ide.jdt.test` -- Tests for the JDT front end
 
 The Polyglot-based front end supports only up to Java 1.4, since that is what Polyglot handles. Hence, it is not suitable for more-recent Java applications that use Java 5 features such as generic types. (Java 6 is supported, but the new constructs in Java 7 are not.) This front end is in the projects below.
 
-` * com.ibm.wala.cast.java.polyglot (`[`javadoc`](http://wala.sourceforge.net/javadocs/com.ibm.wala.cast.java.polyglot)`) (`[`source`](https://github.com/wala/WALA/tree/master/com.ibm.wala.cast.java.polyglot)`)`
-`   o The Polyglot- and CAst-based Java front end`
-` * com.ibm.wala.cast.java.polyglot.test (`[`javadoc`](http://wala.sourceforge.net/javadocs/com.ibm.wala.cast.java.polyglot.test)`) (`[`source`](https://github.com/wala/WALA/tree/master/com.ibm.wala.cast.java.polyglot.test)`)`
-`   o Tests for the Polyglot- and CAst-based Java front end`
+- `com.ibm.wala.cast.java.polyglot` -- The Polyglot- and CAst-based Java front end
+- `com.ibm.wala.cast.java.polyglot.test` -- Tests for the Polyglot- and CAst-based Java front end
 
 These Polyglot-based projects require libraries that are not included in the repository at this site for legal reasons. To obtain the libraries, you can just run ant on the build.xml file in com.ibm.wala.cast.java.polyglot, and it should fetch the polyglot source and build the necessary jars.
 
 ### The JavaScript Source Front End
 
-For more details on the JavaScript front end, see [Getting Started:JavaScript frontend](/Getting_Started:JavaScript_frontend "wikilink").
+For more details on the JavaScript front end, see [[JavaScript frontend]].
 
 Getting started on a MAC
 ------------------------
@@ -190,7 +181,7 @@ On Mac OS X 10.4.9, JRE 5 is available by default. Standard Eclipse for Mac work
 
 Otherwise, the general instructions above should work; let us know if they don't.
 
-Various build.xml files in Wala distribution on sourceforge have Windows paths in them. One might need to generate a build.xml from the project's MANIFEST.MF file (right click and see the menu). *Let me know which ones and we can fix them*. [Sjfink](/User:Sjfink "wikilink")
+Various build.xml files in Wala distribution on sourceforge have Windows paths in them. One might need to generate a build.xml from the project's MANIFEST.MF file (right click and see the menu). *Let me know which ones and we can fix them*. (Sjfink)
 
 Incubator projects
 ------------------
@@ -201,6 +192,6 @@ In addition to the functionality listed above, WALA has a number of *incubator* 
 
 -   If you would like to use WALA as a plugin within Eclipse, you should take a look at [our Eclipse integration incubator project](/GettingStarted:wala.eclipse "wikilink").
 
-### Dynamic Load-time Instrumentation Library for Java ([Dila](http://wala.sourceforge.net/wiki/index.php/GettingStarted:wala.dila))
+### Dynamic Load-time Instrumentation Library for Java Dila
 
--   Dila uses customized class loading for instrumenting the byte code of a program before it is executed. During the execution of an instrumented program dynamic program representations, such as call graphs, are created, which can be used for various program analyses. [Getting started with Dila.](http://wala.sourceforge.net/wiki/index.php/GettingStarted:wala.dila)
+-   Dila uses customized class loading for instrumenting the byte code of a program before it is executed. During the execution of an instrumented program dynamic program representations, such as call graphs, are created, which can be used for various program analyses. [[Getting started with Dila]].
