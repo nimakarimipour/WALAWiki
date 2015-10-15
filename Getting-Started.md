@@ -91,7 +91,7 @@ We will now step through a few example programs, which will analyze the JLex pro
 3.  Create a `JLex.jar` file: `jar cvf JLex.jar JLex/*.class` (again from parent of JLex director)
 4.  Copy JLex.jar to the root of the Eclipse workspace containing WALA.
 
--   **Tip**: We recommend you use the [launchers](/Eclipse:Launcher "wikilink") we have provided for each example program. If you create your own launch configuration, be sure to specify an adequate heap size, such as 800MB via VM argument `-Xmx800MB`.
+-   **Tip**: We recommend you use the [[Eclipse Launcher]] we have provided for each example program. If you create your own launch configuration, be sure to specify an adequate heap size, such as 800MB via VM argument `-Xmx800MB`.
 
 ### Example 1: [SWTTypeHierarchy](http://wala.sourceforge.net/javadocs/trunk/com/ibm/wala/examples/drivers/SWTTypeHierarchy.html)
 
