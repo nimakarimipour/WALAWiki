@@ -100,7 +100,7 @@ Our first example program will do the following:
 1.  Invoke WALA to build a Java type hierarchy
 2.  Spawn an [SWT](http://www.eclipse.org/swt/) [TreeViewer](http://help.eclipse.org/help30/index.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/jface/viewers/TreeViewer.html) to visualize the type hierarchy
 
-Use the [launcher](/Eclipse:Launcher "wikilink") `SWTTypeHierarchy`, found within `com.ibm.wala.ide.tests`. View and edit launchers via Eclipe's `Run -> Run Configurations...` drop-down menu. The launcher should already be listed under "Java Applications" in the list of launchers. Click the "Run" button to run the program; this should just work if you copied JLex.jar to the workspace as indicated above. If successful, you should see a new window pop up with a tree view of the class hierarchy of JLex.
+Use the [[Eclipse Launcher]] `SWTTypeHierarchy`, found within `com.ibm.wala.ide.tests`. View and edit launchers via Eclipe's `Run -> Run Configurations...` drop-down menu. The launcher should already be listed under "Java Applications" in the list of launchers. Click the "Run" button to run the program; this should just work if you copied JLex.jar to the workspace as indicated above. If successful, you should see a new window pop up with a tree view of the class hierarchy of JLex.
 
 Problems? See [[Troubleshooting]].
 
@@ -112,7 +112,7 @@ To run this example, first install the AT&T `dot` tool from <http://www.graphviz
 
 Next, edit the `com.ibm.wala.core.tests/dat/wala.examples.properties` file to have the correct paths to the `dot` and PDF viewer executables; see suggestions in the file.
 
-Now run the `PDFTypeHierarchy` [launcher](/Eclipse:Launcher "wikilink"). This program should soon launch a viewer for a PDF file representing the type hierarchy.
+Now run the `PDFTypeHierarchy` [[Eclipse Launcher]]. This program should soon launch a viewer for a PDF file representing the type hierarchy.
 
 Problems? See [[Troubleshooting]].
 
