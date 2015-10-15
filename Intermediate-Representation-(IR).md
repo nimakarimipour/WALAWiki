@@ -24,7 +24,7 @@ IR Basics
 
 The WALA
 [IR](http://wala.sourceforge.net/javadocs/trunk/com/ibm/wala/ssa/IR.html)
-class provides an [SSA](/Static_single_assignment "wikilink") based
+class provides an [[SSA]] based
 intermediate representation of a particular method. The IR consists of a
 [control-flow
 graph](http://wala.sourceforge.net/javadocs/trunk/com/ibm/wala/cfg/ControlFlowGraph.html)
