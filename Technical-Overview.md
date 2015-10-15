@@ -13,7 +13,7 @@ Many types of analysis are possible. Almost all clients will want to navigate th
 
 More Details
 ------------
-the latest [javadoc]
+(the latest [javadoc])
 
 ### com.ibm.wala.core
 
