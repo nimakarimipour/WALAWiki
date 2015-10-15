@@ -19,12 +19,12 @@ nodes using the method [CallGraph.getNodes(MethodReference m)](http://wala.sourc
 
 WALA supports a family of on-the-fly call graph construction algorithms,
 integrated with flow-insensitive pointer analysis. See
-[UserGuide/PointerAnalysis](???) for
+[[Pointer Analysis]] for
 more details. WALA also has an implementation of call-graph construction
 via rapid type analysis (see
 [`Util.makeRTABuilder()`](http://wala.sourceforge.net/javadocs/trunk/com/ibm/wala/ipa/callgraph/impl/Util.html#makeRTABuilder(com.ibm.wala.ipa.callgraph.AnalysisOptions,%20com.ibm.wala.ipa.cha.IClassHierarchy,%20com.ibm.wala.ipa.callgraph.AnalysisScope,%20com.ibm.wala.util.warnings.WarningSet))),
 but its use is strongly discouraged. The included 0-CFA analysis (see
-[UserGuide/PointerAnalysis](???) is
+[[Pointer Analysis]]) is
 almost always faster and more precise. Furthermore, RTA operates on
 bytecodes, some of which may be proved dead during SSA construction and
 hence not represented in the SSA IR. This can lead to undesirable
