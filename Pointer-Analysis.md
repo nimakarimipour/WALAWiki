@@ -263,5 +263,5 @@ Demand-Driven Pointer Analysis
 ------------------------------
 
 As of version 1.0.04, WALA also includes a demand-driven pointer
-analysis. See the [demand pointer
-analysis](/UserGuide:DemandPointerAnalysis "wikilink") page for details.
+analysis. See the [[demand pointer
+analysis]] page for details.
