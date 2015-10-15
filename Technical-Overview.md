@@ -52,7 +52,7 @@ Shrike consists of two main parts:
 
 WALA relies on Shrike to read class files. Shrike is also appropriate for bytecode manipulation such as instrumentation.
 
-Check out the [Shrike\_technical\_overview] for more details.
+Check out the [Shrike-technical-overview] for more details.
 
   [ClassHierarchy]: UserGuide:ClassHierarchy "wikilink"
   [CallGraph]: UserGuide:CallGraph "wikilink"
