@@ -6,7 +6,7 @@ Driver
 
 The
 [`PDFSlice`](http://wala.sourceforge.net/javadocs/trunk/com/ibm/wala/examples/drivers/PDFSlice.html)
-[launcher](/Eclipse:Launcher "wikilink") provides a simple driver to
+[[Eclipse launcher]] provides a simple driver to
 compute a slice and visualize it as a PDF.
 
 API
@@ -90,7 +90,7 @@ the first instance of calling a `println()` function in the
 
 Once the slice is calculated, we can analyze the statements more
 (including determining the original source line numbers). See the
-[IR](/UserGuide:IR "wikilink") page.
+[[Intermediate Representation (IR)]] page.
 
 `<pre>
     public static CallGraphBuilder doSlicing(String appJar) throws WalaException {
@@ -175,5 +175,4 @@ bytecode. Thus, these Java statements will never appear in the slice.
 
 ### Mapping slices to source code
 
-See details at [this
-page](/UserGuide:MappingToSourceCode#From_Slices_to_source_line_numbers "wikilink").
+See details at [[Mapping to source code]].
