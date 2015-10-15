@@ -11,11 +11,9 @@ format:
 > <em>Classloader,Language,Type,Location</em>
 
 For Java, <em>Classloader</em> is one of `Primordial`, `Extension`, or
-`Application` (see [Naming Java
-Entities](/UserGuide:NamingJavaEntities "wikilink")). `Primordial` is
+`Application` (see [[Naming Java Entities]]). `Primordial` is
 reserved for the Java standard libraries. If you've set up your
-`wala.properties` file correctly (see [Getting
-Started](/UserGuide:Getting_Started "wikilink")), the following two
+`wala.properties` file correctly (see [[Getting Started]], the following two
 lines for `Primordial` should do the right thing:
 
 `Primordial,Java,stdlib,none`
