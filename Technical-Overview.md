@@ -17,9 +17,7 @@ More Details
 
 ### com.ibm.wala.core
 
-This project holds WALA's core analysis utilities. To find out a small subset of what you need to know about these utilties, see the
-
--   [wala.core technical overview].
+This project holds WALA's core analysis utilities. To find out a small subset of what you need to know about these utilties, see the [[wala.core technical overview]].
 
 ### com.ibm.wala.core.testdata
 
@@ -31,15 +29,11 @@ This project holds the JUnit test cases for the com.ibm.wala.core project.
 
 ### com.ibm.wala.cast.js
 
-This project holds the JavaScript frontend to WALA
-
--   [JavaScript frontend].
+This project holds the JavaScript frontend to WALA -- [[JavaScript frontend]].
 
 ### com.ibm.wala.eclipse 
 
-This project holds WALA code that contributes to an Eclipse UI and/or relies on services from an instance of the Eclipse platform. Annie Ying has contributed a call graph viewer that works inside JDT. See
-
--   [wala.eclipse].
+This project holds WALA code that contributes to an Eclipse UI and/or relies on services from an instance of the Eclipse platform. Annie Ying has contributed a call graph viewer that works inside JDT. See [[wala.eclipse]].
 
 ### com.ibm.wala.shrike 
 
