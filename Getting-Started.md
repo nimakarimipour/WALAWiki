@@ -11,10 +11,7 @@ WALA relies on Java 7 to run. In order to compile all the test code from source,
 
 Parts of the WALA framework rely on Eclipse, and in general development using WALA is likely to be easiest from Eclipse. However, compiling WALA using [Apache Maven](http://maven.apache.org/) is also supported. You are encouraged to begin exploring WALA from within a fresh Eclipse 3.7 or 4.2 workspace. You can download Eclipse from <http://www.eclipse.org/downloads/>. WALA is packaged as a bunch of Eclipse plug-ins, so you will need a version of Eclipse that includes the Plugin Development Environment (PDE). To get PDE out of the box, you can download the "Eclipse for RCP and RAP Developers" version. Or, you can download any of the Eclipse variants for Java development and then install PDE from the Eclipse Marketplace, as described [here](http://stackoverflow.com/a/21058382/1126796). Also, if you'd like to use the support for integrating with [Eclipse JSDT](http://www.eclipse.org/webtools/jsdt/) (the `com.ibm.wala.ide.jsdt.*` projects), you'll need to install the JSDT plugin from the repository for your Eclipse release.
 
--   [[Prerequisites for WALA version 1.2.2 through 1.3.4]]
--   [[Prerequisites for WALA version 1.1.1 through 1.2.1]]
--   [[Prerequisites for WALA version 1.0.04 through 1.1]]
--   [[Prerequisites for WALA versions 1.0.03 and Earlier]]
+- [[Prerequisites for earlier WALA-versions]]
 
 Getting the code
 ----------------
