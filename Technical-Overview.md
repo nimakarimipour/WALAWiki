@@ -5,8 +5,8 @@ WALA provides a set of libraries for program analysis.
 
 The typical WALA client will use the libraries to perform interprocedural analysis, via the following sequence:
 
-1.  Build a [ClassHierarchy]; that is, read the program source (e.g. bytecode) into memory, and parse some basic information regarding the types represented. A ClassHierarchy object represents a universe of code to analyze.
-2.  Build a [CallGraph]; that is, perform pointer analysis with on-the-fly call graph construction to resolve the targets of dynamic dispatch calls, and build a graph of CGNode objects representing the possible program calling structure.
+1.  Build a [ClassHierarchy](http://wala.sourceforge.net/javadocs/trunk/com/ibm/wala/ipa/cha/ClassHierarchy.html); that is, read the program source (e.g. bytecode) into memory, and parse some basic information regarding the types represented. A ClassHierarchy object represents a universe of code to analyze.
+2.  Build a [CallGraph](http://wala.sourceforge.net/javadocs/trunk/com/ibm/wala/ipa/callgraph/CallGraph.html); that is, perform pointer analysis with on-the-fly call graph construction to resolve the targets of dynamic dispatch calls, and build a graph of CGNode objects representing the possible program calling structure.
 3.  Perfom some analysis over the resulting call graph.
 
 Many types of analysis are possible. Almost all clients will want to navigate the WALA [IR], which encodes the instructions and control flow of a particular method. The IR is an immutable control-flow graph of instructions in SSA form.
