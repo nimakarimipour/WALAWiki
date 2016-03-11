@@ -1,15 +1,19 @@
-### Places to Start
+## Places to Start
 
 - [[Getting Started]]
 - [[Technical Overview]]
 
-### [[SourceForge Documentation]]
+## [[SourceForge Documentation]]
 
 #### Resources
 
-- [[User Guide]]
+- **User Guide**
+  - [[Introduction]]
+  - [[Getting Started]]
+  - [[Technical Overview]]
+  - [[Troubleshooting]]
+  - [[Tips and Tricks]]
 - [[Tutorials]]
-- [[Getting Started]]
 - [[Javadoc]]
 - [[Publications]]
 - [[Recent Changes]]
