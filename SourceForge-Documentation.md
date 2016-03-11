@@ -24,7 +24,7 @@ WALA features include:
 * SSA-based register-transfer language IR
 * General framework for iterative dataflow
 * General analysis utilities and data structures
-* A bytecode instrumentation library ([Shrike](TODO)) and a dynamic load-time instrumentation library for Java ([Dila](TODO))
+* A bytecode instrumentation library ([[Shrike]]) and a dynamic load-time instrumentation library for Java ([[Dila]])
 
 ### WALA Tools in JavaScript
 
