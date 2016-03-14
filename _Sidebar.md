@@ -16,7 +16,6 @@
 - [[Tutorials]]
 - [[Javadoc]]
 - [[Publications]]
-- [[Recent Changes]]
 
 #### Developer Information
 
