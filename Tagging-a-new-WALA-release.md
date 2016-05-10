@@ -17,15 +17,13 @@ After running this script, commit and push the changes, and then development can
 
 ### Maven Central
 
-**NOTE**: You need to build these jars using JDK 7.
+General documentation is here:
 
-Order in which to build jars:
-* wala.util
-* wala.shrike
-* wala.core
-* wala.cast
-* wala.cast.js
-* wala.cast.js.rhino
+http://central.sonatype.org/pages/ossrh-guide.html
+
+GPG key setup documentation is here:
+
+http://central.sonatype.org/pages/working-with-pgp-signatures.html
 
 You need to set up `~/.m2/settings.xml` to look like this:
 
@@ -62,3 +60,16 @@ You need to set up `~/.m2/settings.xml` to look like this:
   </activeProfiles>
 </settings>
 ```
+
+This uses gpg2 with the gpg agent, to avoid re-typing certificate password repeatedly.
+
+**NOTE**: You need to build these jars using JDK 7.
+
+Order in which to build jars:
+* wala.util
+* wala.shrike
+* wala.core
+* wala.cast
+* wala.cast.js
+* wala.cast.js.rhino
+
