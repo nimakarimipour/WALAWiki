@@ -26,3 +26,39 @@ Order in which to build jars:
 * wala.cast
 * wala.cast.js
 * wala.cast.js.rhino
+
+You need to set up `~/.m2/settings.xml` to look like this:
+
+```xml
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <localRepository/>
+  <interactiveMode/>
+  <usePluginRegistry/>
+  <offline/>
+  <pluginGroups/>
+  <servers>
+    <server>
+      <id>ossrh</id>
+      <username>msridhar</username>
+      <password>*************</password>
+    </server>    
+  </servers>
+  <mirrors/>
+  <proxies/>
+  <profiles>
+    <profile>
+      <id>gpg-profile</id>
+      <properties>
+        <gpg.executable>/usr/local/bin/gpg2</gpg.executable>
+        <gpg.useagent>true</gpg.useagent>        
+      </properties>
+    </profile>    
+  </profiles>
+  <activeProfiles>
+    <activeProfile>gpg-profile</activeProfile>
+  </activeProfiles>
+</settings>
+```
