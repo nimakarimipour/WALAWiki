@@ -20,4 +20,7 @@ After running this script, commit and push the changes, and then development can
 Order in which to build jars:
 * wala.util
 * wala.shrike
-* wala.core 
+* wala.core
+* wala.cast
+* wala.cast.js
+* wala.cast.js.rhino
