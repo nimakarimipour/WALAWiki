@@ -25,6 +25,10 @@ GPG key setup documentation is here:
 
 http://central.sonatype.org/pages/working-with-pgp-signatures.html
 
+Info on Maven is here:
+
+http://central.sonatype.org/pages/apache-maven.html
+
 You need to set up `~/.m2/settings.xml` to look like this:
 
 ```xml
