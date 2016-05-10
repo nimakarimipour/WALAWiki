@@ -17,6 +17,8 @@ After running this script, commit and push the changes, and then development can
 
 ### Maven Central
 
+**NOTE**: You need to build these jars using JDK 7.
+
 Order in which to build jars:
 * wala.util
 * wala.shrike
