@@ -74,6 +74,8 @@ Order in which to build jars:
 * wala.shrike
 * wala.core
 * wala.cast
+* wala.cast.java
+* wala.cast.java.ecj
 * wala.cast.js
 * wala.cast.js.rhino
 
