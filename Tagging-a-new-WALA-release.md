@@ -67,15 +67,17 @@ You need to set up `~/.m2/settings.xml` to look like this:
 
 This uses gpg2 with the gpg agent, to avoid re-typing certificate password repeatedly.
 
-**NOTE**: You need to build these jars using JDK 7.
+**NOTE**: To build release jars for deployment to Maven Central, JDK 7 should be used.  JDK 8 works, but that will force anyone using the jars to also have JDK 8.
 
-Order in which to build jars:
-* wala.util
-* wala.shrike
-* wala.core
-* wala.cast
-* wala.cast.java
-* wala.cast.java.ecj
-* wala.cast.js
-* wala.cast.js.rhino
-
+We now have a script `build-maven-jars.py` that builds the jars in the right order.  For deployment to the local Maven repository on the machine, do (in the root WALA directory):
+```
+./build-maven-jars.py "install -Dgpg.skip"
+```
+If you're a WALA developer and want to do a trial run of building release jars (including GPG signing), you can do:
+```
+./build-maven-jars.py install
+```
+Finally, when you're ready to deploy the jars (to Maven Central or to the [Sonatype staging repos](http://oss.sonatype.org/content/repositories/snapshots/) for SNAPSHOT builds), run:
+```
+./build-maven-jars.py deploy
+```
