@@ -110,7 +110,8 @@ some number of uses. Use the
 class to find the instructions that def and use a particular value
 number. If `DefUse` returns `null` as the def for a value number, that
 value number represents either a parameter or a constant. See below for
-information regarding constants.
+information regarding constants.  Note that the definition may be a phi
+statement; see below for more details.
 
 During SSA translation, stack locations and locals are both translated
 into symbolic virtual registers. For a given SSA value number and
@@ -156,9 +157,13 @@ will give you the represented value.
 Pi nodes (advanced)
 -------------------
 
-Pi assignments (referred to as "pi nodes" in WALA code) were introduced in [Bodik et al.'s ABCD work](http://dl.acm.org/citation.cfm?id=349342) as a technique to capture local path conditions directly in SSA form.  E.g., if we have the code `S1: c = v1 != null S2: if (c) { return v1; }`, we could rewrite it to `S1: c = v1 != null S2: if (c) { v2 = PI(v1, S1); return v2; }`.  With the new representation, an otherwise path-insensitive analysis can easily reason that v2 is never null.
+π assignments (referred to as "pi nodes" in WALA code) were introduced in [Bodik et al.'s ABCD work](http://dl.acm.org/citation.cfm?id=349342) as a technique to capture local path conditions directly in SSA form.  E.g., if we have the code `S1: c = v1 != null S2: if (c) { return v1; }`, we could rewrite it to `S1: c = v1 != null S2: if (c) { v2 = PI(v1, S1); return v2; }`.  With the new representation, an otherwise path-insensitive analysis can easily reason that v2 is never null.
 
 To build IR with pi nodes, invoke `setPiNodePolicy()` on the corresponding `SSAOptions` object with a corresponding `SSAPiNodePolicy`, which governs how pi nodes are constructed.  WALA has two built-in pi-node policies: `NullTestPiPolicy`, which adds pi nodes for null checks (like the example above), and `InstanceOfPiPolicy` for instance-of type tests.
+
+Like with phi instructions, pi instructions are stored on `BasicBlock`s and are not normal IR instructions.  To iterate all pi instructions in an IR, call `IR.iteratePis()`.  More usefully, you can call `BasicBlock.iteratePis()` to see the pi instructions stored on that block.  Note that pi instructions logically execute **at the end** of the basic block on which they are stored; this is the opposite of phi instructions, which logically execute at the beginning of the block.
+
+For a given `SSAPiInstruction`, `getVal()` tells you which value number is being renamed, and `getDef()` tells you the new value number.  How can you tell what condition holds for the new name?  `getSuccessorBlock()` tells you the successor block number where the new name will be used.  Assuming you have the block `b` on which the `SSAPiInstruction` is stored, you can look at `b`'s successors in the control flow graph to figure out the `BasicBlock` `succ` corresponding to the successor block number.  Now, you can call com.ibm.wala.cfg.Util.getTakenSuccessor() or com.ibm.wala.cfg.Util.getNotTakenSuccessor() to figure out if `succ` is reached when the condition at the end of `b` is true or false.  To figure out what condition holds, you need to look at both the `SSAConditionalBranchInstruction` at the end of `b` and the "cause" instruction returned by `SSAPiInstruction.getCause()`; the specific condition will be specific to the pi-node policy.
 
 From IR to bytecode?
 --------------------
