@@ -56,7 +56,9 @@ you should loop over the basic blocks, and then iterate over the
 instructions in each basic block.
 
 Usually, you will build a callgraph, and then acquire the IR for a
-particular node via CGNode.getIR(). Note that WALA might build different
+particular node via CGNode.getIR(). (You can also directly build IR for
+a particular IMethod using the method `AnalysisCache.getIR(IMethod)`.)  
+Note that WALA might build different
 IRs for a single IMethod, depending on the context represented by a
 CGNode. For example, each `clone` node represents the `clone` IMethod in
 a context which defines the receiver type. The IR for each `clone` node
@@ -145,6 +147,13 @@ will tell you if a particular variable represents a constant (pass in
 the value number of the variable as the parameter), and
 [`SymbolTable.getConstantValue()`](http://wala.sourceforge.net/javadocs/trunk/com/ibm/wala/ssa/SymbolTable.html#getConstantValue(int))
 will give you the represented value.
+
+Pi nodes (advanced)
+-------------------
+
+Pi assignments (referred to as "pi nodes" in WALA code) were introduced in [Bodik et al.'s ABCD work](http://dl.acm.org/citation.cfm?id=349342) as a technique to capture local path conditions directly in SSA form.  E.g., if we have the code `S1: c = v1 != null S2: if (c) { return v1; }`, we could rewrite it to `S1: c = v1 != null S2: if (c) { v2 = PI(v1, S1); return v2; }`.  With the new representation, an otherwise path-insensitive analysis can easily reason that v2 is never null.
+
+To build IR with pi nodes, invoke `setPiNodePolicy()` on the corresponding `SSAOptions` object with a corresponding `SSAPiNodePolicy`, which governs how pi nodes are constructed.  WALA has two built-in pi-node policies: `NullTestPiPolicy`, which adds pi nodes for null checks (like the example above), and `InstanceOfPiPolicy` for instance-of type tests.
 
 From IR to bytecode?
 --------------------
