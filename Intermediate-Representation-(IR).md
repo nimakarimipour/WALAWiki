@@ -125,7 +125,7 @@ to see how the IR keeps track of this information internally.
 Phi statements
 --------------
 
-[As is standard in SSA form](https://en.wikipedia.org/wiki/Static_single_assignment_form#Converting_to_SSA), the WALA IR contains *phi statements* to handle cases where multiple definitions may reach some use.  TODO FINISH DOCUMENTING
+[As is standard in SSA form](https://en.wikipedia.org/wiki/Static_single_assignment_form#Converting_to_SSA), the WALA IR contains *phi statements* to handle cases where multiple definitions may reach some use.  These phi statements (`SSAPhiInstruction`s) are *not* stored as normal instructions in the IR, for historical reasons.  Instead, they are stored on `BasicBlock`s in the IR's control-flow graph.  To see all phi instructions in an IR, call `IR.iteratePhis()`.  To see the phi statements on a particular basic block, call `BasicBlock.iteratePhis()`.  Logically, the phi statements on a basic block execute **at the beginning** of the basic block, i.e., before any of the normal instructions in the block.  
 
 Type inference
 --------------
@@ -161,7 +161,7 @@ Pi nodes (advanced)
 
 To build IR with pi nodes, invoke `setPiNodePolicy()` on the corresponding `SSAOptions` object with a corresponding `SSAPiNodePolicy`, which governs how pi nodes are constructed.  WALA has two built-in pi-node policies: `NullTestPiPolicy`, which adds pi nodes for null checks (like the example above), and `InstanceOfPiPolicy` for instance-of type tests.
 
-Like with phi instructions, pi instructions are stored on `BasicBlock`s and are not normal IR instructions.  To iterate all pi instructions in an IR, call `IR.iteratePis()`.  More usefully, you can call `BasicBlock.iteratePis()` to see the pi instructions stored on that block.  Note that pi instructions logically execute **at the end** of the basic block on which they are stored; this is the opposite of phi instructions, which logically execute at the beginning of the block.
+Like with phi instructions, pi instructions are stored on `BasicBlock`s and are not normal IR instructions.  To iterate all pi instructions in an IR, call `IR.iteratePis()`.  More usefully, you can call `BasicBlock.iteratePis()` to see the pi instructions stored on that block.  Note that pi instructions logically execute **at the end** of the basic block on which they are stored; this is the opposite of phi instructions.  More precisely, each `SSAPiInstruction` is associated with some edge *e* in the control-flow graph and is stored at source block of *e$; the instruction only (logically) executes when *e* is traversed.
 
 For a given `SSAPiInstruction`, `getVal()` tells you which value number is being renamed, and `getDef()` tells you the new value number.  How can you tell what condition holds for the new name?  `getSuccessorBlock()` tells you the successor block number where the new name will be used.  Assuming you have the block `b` on which the `SSAPiInstruction` is stored, you can look at `b`'s successors in the control flow graph to figure out the `BasicBlock` `succ` corresponding to the successor block number.  Now, you can call `com.ibm.wala.cfg.Util.getTakenSuccessor()` or `com.ibm.wala.cfg.Util.getNotTakenSuccessor()` to figure out if `succ` is reached when the condition at the end of `b` is true or false.  To figure out what condition holds, you need to look at both the `SSAConditionalBranchInstruction` at the end of `b` and the "cause" instruction returned by `SSAPiInstruction.getCause()`; the specific condition will be specific to the pi-node policy.
 
