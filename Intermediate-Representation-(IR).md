@@ -121,6 +121,11 @@ look at
 [SSABuilder.SSA2LocalMap](http://wala.sourceforge.net/javadocs/trunk/com/ibm/wala/ssa/SSABuilder.html)
 to see how the IR keeps track of this information internally.
 
+Phi statements
+--------------
+
+[As is standard in SSA form](https://en.wikipedia.org/wiki/Static_single_assignment_form#Converting_to_SSA), the WALA IR contains *phi statements* to handle cases where multiple definitions may reach some use.  TODO FINISH DOCUMENTING
+
 Type inference
 --------------
 
