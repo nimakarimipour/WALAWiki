@@ -16,7 +16,7 @@ These are tools / libraries created by other groups that build on or enhance WAL
 [IDE](https://github.com/amaurremi/IDE) is an implementation of the Interprocedural Distributive Environment (IDE) algorithm for WALA.
 
 #### HybriDroid
-[HybriDroid](https://github.com/SunghoLee/WALA/tree/master/HybriDroid) is an implementation of hybrid Dalvik and JavaScript analysis for WALA.
+[HybriDroid](https://github.com/SunghoLee/HybriDroid) is an implementation of hybrid Dalvik and JavaScript analysis for WALA.
 
 #### Keshmesh
 [Keshmesh](http://keshmesh.cs.illinois.edu/) is a static analysis framework for detecting and fixing concurrency bug patterns in Java programs.
