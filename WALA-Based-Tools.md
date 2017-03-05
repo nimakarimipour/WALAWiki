@@ -26,3 +26,6 @@ These are tools / libraries created by other groups that build on or enhance WAL
 
 #### IteRace
 [IteRace](https://github.com/cos/iterace) is a static race detection tool for Java that includes knowledge of loop-parallel operations, among other features. 
+
+#### Compare Call Graphs (JavaScript)
+[Compare Call Graphs](https://github.com/MaxSchlueter/WALA-Analyses/tree/master/CompareCallGraphs) allows for comparison between the dynamic call graph obtained from a [Jalangi2](https://github.com/Samsung/jalangi2) analysis to the static call graph of a JavaScript file in WALA.
