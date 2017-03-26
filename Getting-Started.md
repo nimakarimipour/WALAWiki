@@ -1,6 +1,16 @@
-**NOTE: the guide has only has only been partially migrated to the github wiki -- see [the original](http://wala.sourceforge.net/wiki/index.php/UserGuide:Getting_Started) for any missing links**
-
 This page steps through the process to download, build, and run a core subset of WALA for standard Java analysis. Later we will describe other available components, in addition to this core subset.
+
+Quick Start using Maven Central packages
+----------------------------------------
+
+The quickest way to start with WALA is to get the [packages from Maven Central](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.ibm.wala%22) using your build tool of choice (Maven, Gradle, sbt, etc.).  For an example using Gradle, see the [WALA-start](https://github.com/wala/WALA-start) project.
+
+Note that there are many code examples that only appear in `test` packages in the WALA repository, and you still need to clone the repo to get those.  We are working on adding more examples to WALA-start so this becomes unnecessary.
+
+Also, if you want to use the WALA Dalvik front-end or Scandroid from Maven Central, you need to add the repository `https://raw.github.com/msridhar/maven-jars/mvn-repo/` to your build file, to get a third-party jar that is not yet in Maven Central.  We're also working on fixing this.
+
+For now, the remainder of this document describes how to pull WALA source from Github and build it.  As we migrate more examples to WALA-start, the need for building from source should become less and less.
+
 
 Prerequisites
 -------------
