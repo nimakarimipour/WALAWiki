@@ -3,7 +3,7 @@ This page steps through the process to download, build, and run a core subset of
 Quick Start using Maven Central packages
 ----------------------------------------
 
-The quickest way to start with WALA is to get the [packages from Maven Central](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.ibm.wala%22) using your build tool of choice (Maven, Gradle, sbt, etc.).  For an example using Gradle, see the [WALA-start](https://github.com/wala/WALA-start) project, which also contains some example analyses and driver.
+The quickest way to start with WALA is to get the [packages from Maven Central](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.ibm.wala%22) using your build tool of choice (Maven, Gradle, sbt, etc.).  For an example using Gradle, see the [WALA-start](https://github.com/wala/WALA-start) project, which also contains some example analyses and drivers.
 
 Note that there are many code examples that only appear in `test` packages in the WALA repository, and you still need to clone the repo to get those.  We are working on adding more examples to WALA-start so this becomes unnecessary.
 
