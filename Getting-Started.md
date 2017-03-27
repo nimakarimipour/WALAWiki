@@ -21,8 +21,6 @@ WALA relies on Java 7 to run. In order to compile all the test code from source,
 
 Parts of the WALA framework rely on Eclipse, and in general development using WALA is likely to be easiest from Eclipse. However, compiling WALA using [Apache Maven](http://maven.apache.org/) is also supported. You are encouraged to begin exploring WALA from within a fresh Eclipse 3.7 or 4.2 workspace. You can download Eclipse from <http://www.eclipse.org/downloads/>. WALA is packaged as a bunch of Eclipse plug-ins, so you will need a version of Eclipse that includes the Plugin Development Environment (PDE). To get PDE out of the box, you can download the "Eclipse for RCP and RAP Developers" version. Or, you can download any of the Eclipse variants for Java development and then install PDE from the Eclipse Marketplace, as described [here](http://stackoverflow.com/a/21058382/1126796). Also, if you'd like to use the support for integrating with [Eclipse JSDT](http://www.eclipse.org/webtools/jsdt/) (the `com.ibm.wala.ide.jsdt.*` projects), you'll need to install the JSDT plugin from the repository for your Eclipse release.
 
-- [[Prerequisites for earlier WALA versions]]
-
 Getting the code
 ----------------
 
@@ -37,8 +35,6 @@ From the command-line, simply run:
 This provides you with the latest WALA code. If you prefer, you can stick to some release by checking out the appropriate tag, e.g. (after cloning):
 
 `git checkout R_1.3.5`
-
-See [[Accessing WALA Using Git]] for details on accessing WALA via Git from within Eclipse.
 
 #### Access via Subversion
 
@@ -101,7 +97,7 @@ We will now step through a few example programs, which will analyze the JLex pro
 3.  Create a `JLex.jar` file: `jar cvf JLex.jar JLex/*.class` (again from parent of JLex director)
 4.  Copy JLex.jar to the root of the Eclipse workspace containing WALA.
 
--   **Tip**: We recommend you use the [[Eclipse Launcher]] we have provided for each example program. If you create your own launch configuration, be sure to specify an adequate heap size, such as 800MB via VM argument `-Xmx800MB`.
+-   **Tip**: We recommend you use the [Eclipse Launcher](http://wala.sourceforge.net/wiki/index.php/Eclipse:Launcher) we have provided for each example program. If you create your own launch configuration, be sure to specify an adequate heap size, such as 800MB via VM argument `-Xmx800MB`.
 
 ### Example 1: [SWTTypeHierarchy](http://wala.sourceforge.net/javadocs/trunk/com/ibm/wala/examples/drivers/SWTTypeHierarchy.html)
 
@@ -110,9 +106,9 @@ Our first example program will do the following:
 1.  Invoke WALA to build a Java type hierarchy
 2.  Spawn an [SWT](http://www.eclipse.org/swt/) [TreeViewer](http://help.eclipse.org/help30/index.jsp?topic=/org.eclipse.platform.doc.isv/reference/api/org/eclipse/jface/viewers/TreeViewer.html) to visualize the type hierarchy
 
-Use the [[Eclipse Launcher]] `SWTTypeHierarchy`, found within `com.ibm.wala.ide.tests`. View and edit launchers via Eclipe's `Run -> Run Configurations...` drop-down menu. The launcher should already be listed under "Java Applications" in the list of launchers. Click the "Run" button to run the program; this should just work if you copied JLex.jar to the workspace as indicated above. If successful, you should see a new window pop up with a tree view of the class hierarchy of JLex.
+Use the [Eclipse Launcher](http://wala.sourceforge.net/wiki/index.php/Eclipse:Launcher) `SWTTypeHierarchy`, found within `com.ibm.wala.ide.tests`. View and edit launchers via Eclipe's `Run -> Run Configurations...` drop-down menu. The launcher should already be listed under "Java Applications" in the list of launchers. Click the "Run" button to run the program; this should just work if you copied JLex.jar to the workspace as indicated above. If successful, you should see a new window pop up with a tree view of the class hierarchy of JLex.
 
-Problems? See [[Troubleshooting]].
+Problems? See [Troubleshooting](http://wala.sourceforge.net/wiki/index.php/UserGuide:Troubleshooting).
 
 ### Example 2: [PDFTypeHierarchy](http://wala.sourceforge.net/javadocs/trunk/com/ibm/wala/examples/drivers/PDFTypeHierarchy.html)
 
@@ -122,9 +118,9 @@ To run this example, first install the AT&T `dot` tool from <http://www.graphviz
 
 Next, edit the `com.ibm.wala.core.tests/dat/wala.examples.properties` file to have the correct paths to the `dot` and PDF viewer executables; see suggestions in the file.
 
-Now run the `PDFTypeHierarchy` [[Eclipse Launcher]]. This program should soon launch a viewer for a PDF file representing the type hierarchy.
+Now run the `PDFTypeHierarchy` [Eclipse Launcher](http://wala.sourceforge.net/wiki/index.php/Eclipse:Launcher). This program should soon launch a viewer for a PDF file representing the type hierarchy.
 
-Problems? See [[Troubleshooting]].
+Problems? See [Troubleshooting](http://wala.sourceforge.net/wiki/index.php/UserGuide:Troubleshooting).
 
 -   **Tip**: dot will choke on large graphs. Don't do it.
 
@@ -180,7 +176,7 @@ These Polyglot-based projects require libraries that are not included in the rep
 
 ### The JavaScript Source Front End
 
-For more details on the JavaScript front end, see [[JavaScript frontend]].
+For more details on the JavaScript front end, see [JavaScript frontend](http://wala.sourceforge.net/wiki/index.php/Getting_Started:JavaScript_frontend).
 
 Getting started on a MAC
 ------------------------
@@ -204,4 +200,4 @@ In addition to the functionality listed above, WALA has a number of *incubator* 
 
 ### Dynamic Load-time Instrumentation Library for Java Dila
 
--   Dila uses customized class loading for instrumenting the byte code of a program before it is executed. During the execution of an instrumented program dynamic program representations, such as call graphs, are created, which can be used for various program analyses. [[Getting started with Dila]].
+-   Dila uses customized class loading for instrumenting the byte code of a program before it is executed. During the execution of an instrumented program dynamic program representations, such as call graphs, are created, which can be used for various program analyses. [Getting started with Dila](http://wala.sourceforge.net/wiki/index.php/GettingStarted:wala.dila).
