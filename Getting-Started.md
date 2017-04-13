@@ -36,16 +36,6 @@ This provides you with the latest WALA code. If you prefer, you can stick to som
 
 `git checkout R_1.3.5`
 
-#### Access via Subversion
-
-The root Subversion URL for the WALA repository is:
-
-`https://github.com/wala/WALA  `
-
-You can work out of the `trunk` branch, or stick with a previous release under `branches`.
-
-We recommend you install SubClipse ([install instructions](http://subclipse.tigris.org/servlets/ProjectProcess?pageID=p4wYuA)) to provide Subversion support for Eclipse.
-
 #### Getting WALA 1.3.3 and earlier
 
 WALA releases 1.3.3 and earlier are archived in the Sourceforge Subversion repository at this URL:
