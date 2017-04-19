@@ -80,12 +80,7 @@ Note that on Windows all paths must be specified using '/' and not '\\'!
 Running WALA Example programs
 -----------------------------
 
-We will now step through a few example programs, which will analyze the JLex program from Princeton University. First, you will need a file `JLex.jar` holding the contents of this program:
-
-1.  Download `Main.java` <http://www.cs.princeton.edu/~appel/modern/java/JLex/Archive/1.2.6/Main.java> to a directory named JLex. *Note that case matters ... the L is uppercase.*
-2.  Compile the file: from the parent directory of JLex, run `javac JLex/Main.java` (ignore any compile warnings)
-3.  Create a `JLex.jar` file: `jar cvf JLex.jar JLex/*.class` (again from parent of JLex director)
-4.  Copy JLex.jar to the root of the Eclipse workspace containing WALA.
+We will now step through a few example programs, which will analyze the JLex program from Princeton University.  The `JLex.jar` file should be present in `com.ibm.wala.core.testdata` if you ran the `mvn clean verify -DskipTests=true -q` command from above successfully.  (Alternately, you can run `ant` in the `com.ibm.wala.core.testdata` directory to get it.)  
 
 -   **Tip**: We recommend you use the [Eclipse Launcher](http://wala.sourceforge.net/wiki/index.php/Eclipse:Launcher) we have provided for each example program. If you create your own launch configuration, be sure to specify an adequate heap size, such as 800MB via VM argument `-Xmx800MB`.
 
