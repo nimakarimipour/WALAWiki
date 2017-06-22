@@ -58,7 +58,7 @@ To get started, we concentrate on a core subset of WALA for standard Java analys
 
 When you initially import the WALA projects into Eclipse, you may see some compile errors (due to missing external dependencies), but the above projects should compile, which is enough to get started.
 
-To fix the above compile errors, or if you prefer building without Eclipse, you can use our maven build scripts. First, manually download dx.jar and place it in the com.ibm.wala.dalvik.test/lib folder, as described [here](https://groups.google.com/d/msg/wala-sourceforge-net/cBYsfEvYVG0/Ua52dyQQU-YJ). (Unfortunately, we cannot easily download this jar automatically.) Then, in your root directory (the parent directory where you cloned WALA, or your workspace root), run the following command to download external dependencies and compile all the WALA projects:
+To fix the above compile errors, or if you prefer building without Eclipse, you can use our maven build scripts. In your root directory (the parent directory where you cloned WALA, or your workspace root), run the following command to download external dependencies and compile all the WALA projects:
 
 `mvn clean verify -DskipTests=true -q`
 
