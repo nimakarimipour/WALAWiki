@@ -62,7 +62,7 @@ To fix the above compile errors, or if you prefer building without Eclipse, you 
 
 `mvn clean verify -DskipTests=true -q`
 
-Be sure you have a recent version of Maven, at least version 3.0. You also need to have the `svn` executable in your path, as an `svn checkout` is performed during the build. The first Maven build may take a while, as it must download many dependencies. For Eclipse users, once the Maven build is finished, refresh / rebuild your workspace, and the compile errors should disappear. (If you didn't install the JSDT plugin, as described above, you may still see compile errors in the `com.ibm.wala.ide.jsdt.*` projects.)
+Be sure you have a recent version of Maven, at least version 3.0.  The first Maven build may take a while, as it must download many dependencies. For Eclipse users, once the Maven build is finished, refresh / rebuild your workspace, and the compile errors should disappear. (If you didn't install the JSDT plugin, as described above, you may still see compile errors in the `com.ibm.wala.ide.jsdt.*` projects.)
 
 Alternately, if you don't want to use Maven, there are instructions below for fixing the compile errors by running various Ant build.xml files.
 
