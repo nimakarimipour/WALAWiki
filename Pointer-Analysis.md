@@ -4,7 +4,7 @@ policy in various ways. We often find that for a particular client
 application, it is useful to customize the pointer analysis policy to
 focus analysis effort where it matters.
 
-Currently all pointer analysis implementations perform on-the-fly call
+Currently, all pointer analysis implementations perform on-the-fly call
 graph construction.
 
 A pointer analysis context-sensitivity policy can vary in two
@@ -17,7 +17,7 @@ dimensions:
     how does the call graph construction clone methods based on context?
 
 You can define your own pointer analysis policy by customizing a heap
-model and context selector. Also WALA provides a number of built-in
+model and context selector. Also, WALA provides a number of built-in
 policies.
 
 Heap Model
@@ -31,15 +31,9 @@ and heap locations. The key classes are
 -   [`InstanceKey`](http://wala.sourceforge.net/javadocs/trunk/com/ibm/wala/ipa/callgraph/propagation/InstanceKey.html):
     a representation of an abstract heap location.
 
-For example, a `PointerKey` may represent a local variable, or a static
-field, or an instance field of objects from a particular allocation
-site, or other variants. More technically, a `PointerKey` is the name
-for an equivalence class of pointers from the concrete program, which
-are collected into a single representative in the abstraction.
+For example, a `PointerKey` may represent a local variable or a static field, or an instance field of objects from a particular allocation site, or other variants. More technically, a `PointerKey` is the name for an equivalence class of pointers from the concrete program, which are collected into a single representative in the abstraction.
 
-An `InstanceKey` may represent all objects of a particular type, or all
-objects from a particular allocation site, or all objects from a
-particular allocation site in a particular context, or other variants.
+An `InstanceKey` may represent all objects of a particular type or all objects from a particular allocation site, or all objects from a particular allocation site in a particular context, or other variants.
 
 A `HeapModel` provides call-backs for the pointer analysis to create
 `PointerKeys` and `InstanceKeys` during analysis. You can customize the
@@ -54,7 +48,7 @@ pointer analysis. The nodes in a `HeapGraph` are `PointerKeys` and
 `InstanceKey` *I* if and only if the pointer analysis indicates that *P*
 may point to *I*. There is an edge from an `InstanceKey` *I* to a
 `PointerKey` *P* if and only if *P* represents a field of an object
-instance modelled by *I*, or *P* represents the array contents of array
+instance modeled by *I*, or *P* represents the array contents of array
 instance *I*.
 
 For example, given a `HeapGraph` *h*, suppose you want to know all the
@@ -76,20 +70,20 @@ The simplest Context is
 which represents a single, global context for a method.
 
 Other context-policies can represent call-string contexts, contexts
-naming the receiver object to implement object-sensitivity, or other
+naming the receiver object to implement object-sensitivity or other
 variants.
 
 You can customize a context-sensitivity policy by providing a custom
 `ContextSelector` object.
 
-Entrypoints
+Entry points
 -----------
 
-Suppose we have a public entrypoint with the following signature:
+Suppose we have a public entry point with the following signature:
 
-`    public static void foo(Object x, Object y)`
+    public static void foo(Object x, Object y)
 
-What will pointer analysis do with the parameters to this entrypoint? In
+What will pointer analysis do with the parameters to this entry point? In
 particular, what `InstanceKey` abstractions will the pointer analysis
 instantiate as the initial contents of the actual parameters `x` and
 `y`?
@@ -97,25 +91,25 @@ instantiate as the initial contents of the actual parameters `x` and
 WALA's pointer analysis uses the `Entrypoint` interface to direct this
 policy. The crucial method, in the `Entrypoint` interface, is:
 
-`   public abstract TypeReference[] getParameterTypes(int i);`
+    public abstract TypeReference[] getParameterTypes(int i);
 
 `getParameterTypes(i)` gives a set of types which will be instantiated
-for the `i`th parameter to the entrypoint.
+for the `i`th parameter to the entry point.
 
 For example, suppose we build an `Entrypoint` implementation for `foo`
 where
 
-`   ``getParameterTypes(0) = { java.lang.Object, java.lang.String } `
-`   ``getParameterTypes(1) = { java.lang.Integer } `
+    getParameterTypes(0) = { java.lang.Object, java.lang.String }
+    getParameterTypes(1) = { java.lang.Integer } `
 
 Then logically, the pointer analysis models the invocation of `foo` as
 follows:
 
-`   ``Object o1 = new java.lang.Object();
+    Object o1 = new java.lang.Object();
     Object o2 = new java.lang.String();
     Object o3 = non-determinstic-choice ? o1 : o2;
     Object o4 = new java.lang.Integer();
-    foo(o3,o4); `
+    foo(o3,o4);
 
 So, the pointer analysis will create `InstanceKey` abstractions
 according to the governing `HeapModel`, as if the program encounters
@@ -197,12 +191,12 @@ extends the ZeroOneCFA policy with unlimited object-sensitivity for
 collection objects. For any allocation sites in collection objects, the
 allocation site is named by a tuple of allocation sites extending to the
 outermost enclosing collection allocation. This policy can be relatively
-expensive, but can be effective in disambiguating contents of standard
+expensive, but can be effective in disambiguating contents of the standard
 collection classes. For this to be effective, note that ZeroOneContainer
 modifies the `ContextSelector` to clone methods based on the receiver
 object's object-sensitive name. The
 [`ContainerContextSelector`](https://github.com/wala/WALA/blob/3e78ff7dc6ae03337404aff53c5aa9635cef0152/com.ibm.wala.core/src/com/ibm/wala/ipa/callgraph/propagation/cfa/ContainerContextSelector.java)
-class manages this logic, and the method
+class manages this logic and the method
 [`ContainerUtil.isContainer()`](https://github.com/wala/WALA/blob/3e78ff7dc6ae03337404aff53c5aa9635cef0152/com.ibm.wala.core/src/com/ibm/wala/ipa/callgraph/propagation/ContainerUtil.java#L45)
 determines which classes are considered containers.
 
@@ -221,9 +215,7 @@ Currently, all built-in pointer analysis policies treat calls to
 `Object.clone()` context sensitively, using the concrete type of the
 receiver class as the context (see
 [`CloneContextSelector`](http://wala.sourceforge.net/javadocs/trunk/com/ibm/wala/ipa/callgraph/propagation/CloneContextSelector.html)).
-Also, `clone()` has a different IR in each context, to properly model
-the semantics of the method for the corresponding receiver type (see
-[`CloneInterpreter`](http://wala.sourceforge.net/javadocs/trunk/com/ibm/wala/analysis/reflection/CloneInterpreter.html)).
+Also, `clone()` has a different IR in each context, to properly model the semantics of the method for the corresponding receiver type (see [`CloneInterpreter`](http://wala.sourceforge.net/javadocs/trunk/com/ibm/wala/analysis/reflection/CloneInterpreter.html)).
 
 There is also significant support for other reflective constructs like
 `Class.forName()`, `Class.newInstance()`, `Method.invoke()`, etc. See
@@ -237,12 +229,12 @@ for tuning the handling.
 Improving Scalability
 ---------------------
 
-Reflection usage and the size of modern libraries / frameworks make it
+Reflection usage and the size of modern libraries/frameworks make it
 very difficult to scale flow-insensitive points-to analysis to modern
 Java programs. For example, with default settings, WALA's pointer
 analyses cannot handle any program linked against the Java 6 standard
 libraries, due to extensive reflection in the libraries. To improve
-scalability (at the cost of some soundness in some cases), try the
+scalability (at the cost of some soundness in some cases) try the
 following:
 
 -   Use `AnalysisScope` exclusions to exclude classes / packages you
@@ -256,8 +248,7 @@ following:
 -   Reduce WALA's reflection handling by calling
     `setReflectionOptions()` on the
     [`AnalysisOptions`](https://github.com/wala/WALA/blob/master/com.ibm.wala.core/src/com/ibm/wala/ipa/callgraph/AnalysisOptions.java)
-    object used for pointer analysis. You may have to tinker to see what
-    setting enables scalability for your application.
+    an object used for pointer analysis. You may have to tinker to see what setting enables scalability for your application.
 
 Demand-Driven Pointer Analysis
 ------------------------------
