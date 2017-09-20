@@ -100,7 +100,7 @@ For example, suppose we build an `Entrypoint` implementation for `foo`
 where
 
     getParameterTypes(0) = { java.lang.Object, java.lang.String }
-    getParameterTypes(1) = { java.lang.Integer } `
+    getParameterTypes(1) = { java.lang.Integer }
 
 Then logically, the pointer analysis models the invocation of `foo` as
 follows:
