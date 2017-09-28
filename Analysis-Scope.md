@@ -8,7 +8,7 @@ method, whose first parameter is the name of a text <em>scope file</em>
 specifying the analysis scope. A scope file has lines of the following
 format:
 
-> <em>Classloader,Language,Type,Location</em>
+    Classloader,Language,Type,Location
 
 For Java, <em>Classloader</em> is one of `Primordial`, `Extension`, or
 `Application` (see [[Naming Java Entities]]). `Primordial` is
@@ -16,8 +16,8 @@ reserved for the Java standard libraries. If you've set up your
 `wala.properties` file correctly (see [[Getting Started]], the following two
 lines for `Primordial` should do the right thing:
 
-`Primordial,Java,stdlib,none`
-`Primordial,Java,jarFile,primordial.jar.model`
+    Primordial,Java,stdlib,none
+    Primordial,Java,jarFile,primordial.jar.model
 
 `Extension` entries should be used for other libraries used by the
 application, while `Application` entries should be used for the
@@ -32,8 +32,9 @@ application code itself. Valid values of <em>Type</em> are:
 
 <em>Location</em> should give the appropriate filesystem path. Here's a
 full example:
-
-`Primordial,Java,stdlib,none`
-`Primordial,Java,jarFile,primordial.jar.model`
-`Extension,Java,jarFile,/workspace/myapp/lib/someLib.jar`
-`Application,Java,binaryDir,/workspace/myApp/bin`
+```
+Primordial,Java,stdlib,none
+Primordial,Java,jarFile,primordial.jar.model
+Extension,Java,jarFile,/workspace/myapp/lib/someLib.jar
+Application,Java,binaryDir,/workspace/myApp/bin
+```
