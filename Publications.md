@@ -6,7 +6,7 @@ TODO -- the numbering isn't correct, because markdown isn't smart enough.
 
 
 
-Partial list of publications that rely on the WALA infrastructure (including Shrike), or its precursor DOMO. This list is not fully up-to-date; you can find more publications based on WALA using [this Google Scholar search](http://scholar.google.com/scholar?q=%22wala+sf+net%22+OR+%22wala+sourceforge+net%22).
+Partial list of publications that rely on the WALA infrastructure (including Shrike), or its precursor DOMO. This list is not fully up-to-date; you can find more publications based on WALA using [this Google Scholar search](http://scholar.google.com/scholar?q=%22github+com+WALA%22+OR+%22wala+sf+net%22+OR+%22wala+sourceforge+net%22).
 
 
 ### 2011
