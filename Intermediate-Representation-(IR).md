@@ -130,8 +130,7 @@ Phi statements
 Type inference
 --------------
 
-You can discover types for value numbers in an IR using the
-`TypeInference` class. E.g.:
+You can discover types intraprocedurally for value numbers in an IR using the `TypeInference` class. E.g.:
 
         IR ir = ...;
         boolean doPrimitives = ...; // infer types for primitive vars?
