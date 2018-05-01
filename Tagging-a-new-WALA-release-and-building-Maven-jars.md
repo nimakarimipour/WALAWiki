@@ -67,8 +67,6 @@ You need to set up `~/.m2/settings.xml` to look like this:
 
 This uses gpg2 with the gpg agent, to avoid re-typing certificate password repeatedly.
 
-**NOTE**: To build release jars for deployment to Maven Central, JDK 7 should be used.  JDK 8 works, but that will force anyone using the jars to also have JDK 8.
-
 **NOTE**: If you were following the steps above, be sure to check out the release tag locally if you want to deploy a release, e.g., `get checkout R_1.3.8`.
 
 We now have a script `build-maven-jars.py` that builds the jars in the right order.  For deployment to the local Maven repository on the machine, do (in the root WALA directory):
