@@ -4,7 +4,7 @@ These are tools / libraries created by other groups that build on or enhance WAL
 [WALAFacade](https://github.com/cos/WALAFacade) is a Scala library that enables more idiomatic use of WALA from Scala code.  The CUPLV [walautil](https://github.com/cuplv/walautil) project is a collection of utility methods for WALA projects written in Scala.
 
 #### Averroes
-[Averroes](http://github.com/karimhamdanali/averroes) is a tool that generates a placeholder library overapproximating the possible behaviour of the original library.  It is compatible with WALA's call graph construction algorithms.
+[Averroes](https://github.com/themaplelab/averroes) is a tool that generates a placeholder library overapproximating the possible behaviour of the original library.  It is compatible with WALA's call graph construction algorithms.
 
 #### Hopper
 [Hopper](https://github.com/cuplv/hopper) is a goal-directed static analysis tool for languages that run on the JVM.
