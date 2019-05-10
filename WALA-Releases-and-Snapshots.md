@@ -8,7 +8,7 @@ WALA's Travis CI configuration is set up to upload a new snapshot build to Sonat
 
 ### Installing local snapshots
 
-You can install a snapshot build of WALA into your local Maven repository with the following command:
+If you have local changes to WALA, you can install them as a snapshot build into your local Maven repository with the following command:
 ```
 ./gradlew install
 ```
