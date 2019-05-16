@@ -1,21 +1,11 @@
 This section of the user guide holds information on how to use facilities in wala.core. This is stuff you probably need to know.
-
-Naming Java Entities
-
-Analysis Scope
-
-Class Hierarchy
-
-IR
-
-Call Graph
-
-Pointer Analysis
-
-Slicer
-
-Native Code
-
-Dataflow Solvers
-
-Mapping Back to Source Code
+- [Naming Java Entities](http://wala.sourceforge.net/wiki/index.php/UserGuide:NamingJavaEntities)
+- [Analysis Scope](http://wala.sourceforge.net/wiki/index.php/UserGuide:AnalysisScope)
+- [Class Hierarchy](http://wala.sourceforge.net/wiki/index.php/UserGuide:ClassHierarchy)
+- [IR](http://wala.sourceforge.net/wiki/index.php/UserGuide:IR)
+- [Call Graph](http://wala.sourceforge.net/wiki/index.php/UserGuide:CallGraph)
+- [Pointer Analysis](http://wala.sourceforge.net/wiki/index.php/UserGuide:PointerAnalysis)
+- [Slicer](http://wala.sourceforge.net/wiki/index.php/UserGuide:Slicer)
+- [Native Code](http://wala.sourceforge.net/wiki/index.php/UserGuide:NativeCode)
+- [Dataflow Solvers](http://wala.sourceforge.net/wiki/index.php/UserGuide:DataflowSolvers)
+- [Mapping Back to Source Code](http://wala.sourceforge.net/wiki/index.php/UserGuide:MappingToSourceCode)
