@@ -54,7 +54,7 @@ The `signing.gnupg.keyName` property should be the ID of the public key you will
 
 During development, WALA master uses a SNAPSHOT release version corresponding to the next release (e.g., `1.3.8-SNAPSHOT`).  When all other changes for the release are committed, the first step for tagging a release is to update this version number to a non-SNAPSHOT version, using the `change-version.py` script in the top-level directory.  Run the script as follows (substituting the current SNAPSHOT version number):
 ```
-./change-version.py 1.3.8-SNAPSHOT 1.3.8
+./change-version.sh 1.3.8-SNAPSHOT 1.3.8
 ```
 This will update various metadata files to have the new version number.  Once this is done, commit the changes:
 ```
@@ -74,7 +74,7 @@ This step may take several minutes.  Also, it will sign the archives, so if you 
 
 Then, update the version to the next snapshot, e.g.:
 ```
-./change-version.py 1.3.8 1.3.9-SNAPSHOT
+./change-version.sh 1.3.8 1.3.9-SNAPSHOT
 ```
 
 Commit the change:
