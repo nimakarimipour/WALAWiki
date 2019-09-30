@@ -52,7 +52,7 @@ Available `DataDependenceOptions` include:
 -   `FULL` : track all data dependencies
 -   `NO_BASE_PTRS` : like `FULL`, but ignore data dependence edges that
     define base pointers for indirect memory access
--   `NO_BASE_NO_HEAP` : like `NO_BASE_PTS`, and additionally ignore all
+-   `NO_BASE_NO_HEAP` : like `NO_BASE_PTRS`, and additionally ignore all
     data dependence edges to/from heap locations
 -   `NO_HEAP` : like `FULL`, and additionally ignore all data dependence
     edges to/from heap locations
