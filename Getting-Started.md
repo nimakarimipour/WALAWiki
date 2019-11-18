@@ -19,7 +19,7 @@ Prerequisites
 
 WALA relies on Java 7 to run. In order to compile all the test code from source, Java 8 is required.
 
-Parts of the WALA framework rely on Eclipse, and in general development using WALA is likely to be easiest from Eclipse. However, compiling WALA using [Apache Maven](http://maven.apache.org/) is also supported. You are encouraged to begin exploring WALA from within a fresh Eclipse 3.7 or 4.2 workspace. You can download Eclipse from <http://www.eclipse.org/downloads/>. WALA is packaged as a bunch of Eclipse plug-ins, so you will need a version of Eclipse that includes the Plugin Development Environment (PDE). To get PDE out of the box, you can download the "Eclipse for RCP and RAP Developers" version. Or, you can download any of the Eclipse variants for Java development and then install PDE from the Eclipse Marketplace, as described [here](http://stackoverflow.com/a/21058382/1126796). Also, if you'd like to use the support for integrating with [Eclipse JSDT](http://www.eclipse.org/webtools/jsdt/) (the `com.ibm.wala.ide.jsdt.*` projects), you'll need to install the JSDT plugin from the repository for your Eclipse release.
+Parts of the WALA framework rely on Eclipse, and in general development using WALA is likely to be easiest from Eclipse. However, [compiling WALA using Gradle](https://github.com/wala/WALA/blob/master/README-Gradle.md) is also supported. You are encouraged to begin exploring WALA from within a fresh Eclipse 3.7 or 4.2 workspace. You can download Eclipse from <http://www.eclipse.org/downloads/>. WALA is packaged as a bunch of Eclipse plug-ins, so you will need a version of Eclipse that includes the Plugin Development Environment (PDE). To get PDE out of the box, you can download the "Eclipse for RCP and RAP Developers" version. Or, you can download any of the Eclipse variants for Java development and then install PDE from the Eclipse Marketplace, as described [here](http://stackoverflow.com/a/21058382/1126796). Also, if you'd like to use the support for integrating with [Eclipse JSDT](http://www.eclipse.org/webtools/jsdt/) (the `com.ibm.wala.ide.jsdt.*` projects), you'll need to install the JSDT plugin from the repository for your Eclipse release.
 
 Getting the code
 ----------------
@@ -47,24 +47,7 @@ WALA 1.3.4 is available both in the Sourceforge and GitHub repositories.
 Building the code
 -----------------
 
-To get started, we concentrate on a core subset of WALA for standard Java analysis:
-
-- `com.ibm.wala.core` -- core WALA framework support
-- `com.ibm.wala.shrike` -- Shrike bytecode manipulation library
-- `com.ibm.wala.core.tests` -- basic WALA example programs
-- `com.ibm.wala.ide` -- WALA support that relies on Eclipse IDE or SWT functionality
-- `com.ibm.wala.ide.tests` -- tests for WALA support that relies on Eclipse IDE functionality
-- `com.ibm.wala.util` -- general utilities (post WALA 1.3.2)
-
-When you initially import the WALA projects into Eclipse, you may see some compile errors (due to missing external dependencies), but the above projects should compile, which is enough to get started.
-
-To fix the above compile errors, or if you prefer building without Eclipse, you can use our maven build scripts. In your root directory (the parent directory where you cloned WALA, or your workspace root), run the following command to download external dependencies and compile all the WALA projects:
-
-`mvn clean verify -DskipTests=true -q`
-
-Be sure you have a recent version of Maven, at least version 3.0.  The first Maven build may take a while, as it must download many dependencies. For Eclipse users, once the Maven build is finished, refresh / rebuild your workspace, and the compile errors should disappear. (If you didn't install the JSDT plugin, as described above, you may still see compile errors in the `com.ibm.wala.ide.jsdt.*` projects.)
-
-Alternately, if you don't want to use Maven, there are instructions below for fixing the compile errors by running various Ant build.xml files.
+To get started, follow [the Gradle build instructions](https://github.com/wala/WALA/blob/master/README-Gradle.md) for either [building in Eclipse](https://github.com/wala/WALA/blob/master/README-Gradle.md#eclipse), [building in IntelliJ IDEA](https://github.com/wala/WALA/blob/master/README-Gradle.md#intellij-idea), or [building using Gradle on the command line](https://github.com/wala/WALA/blob/master/README-Gradle.md#gradle-command-line). The first build may take a while, as it must download many dependencies.
 
 Configuring WALA properties
 ---------------------------
@@ -80,7 +63,7 @@ Note that on Windows all paths must be specified using '/' and not '\\'!
 Running WALA Example programs
 -----------------------------
 
-We will now step through a few example programs, which will analyze the JLex program from Princeton University.  The `JLex.jar` file should be present in `com.ibm.wala.core.testdata` if you ran the `mvn clean verify -DskipTests=true -q` command from above successfully.  (Alternately, you can run `ant` in the `com.ibm.wala.core.testdata` directory to get it.)  
+We will now step through a few example programs, which will analyze the JLex program from Princeton University.  The `JLex.jar` file should be present in `com.ibm.wala.core.testdata` if you ran an Eclipse, IntelliJ IDEA, or Gradle command-line build successfully as recommended above.
 
 -   **Tip**: We recommend you use the [Eclipse Launcher](http://wala.sourceforge.net/wiki/index.php/Eclipse:Launcher) we have provided for each example program. If you create your own launch configuration, be sure to specify an adequate heap size, such as 800MB via VM argument `-Xmx800MB`.
 
