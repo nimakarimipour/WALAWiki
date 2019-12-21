@@ -3,11 +3,9 @@ This page steps through the process to download, build, and run a core subset of
 Quick Start using Maven Central packages
 ----------------------------------------
 
-The quickest way to start with WALA is to get the [packages from Maven Central](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.ibm.wala%22) using your build tool of choice (Maven, Gradle, sbt, etc.).  For an example using Gradle, see the [WALA-start](https://github.com/wala/WALA-start) project, which also contains some example analyses and drivers.
+The best way to use WALA is via the [packages from Maven Central](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.ibm.wala%22) using your build tool of choice (Maven, Gradle, sbt, etc.).  For an example using Gradle, see the [WALA-start](https://github.com/wala/WALA-start) project, which also contains some example analyses and drivers.
 
-Note that there are many code examples that only appear in `test` packages in the WALA repository, and you still need to clone the repo to get those.  We are working on adding more examples to WALA-start so this becomes unnecessary.
-
-Also, if you want to use the WALA Dalvik front-end or Scandroid from Maven Central, you need to add the repository `https://raw.github.com/msridhar/maven-jars/mvn-repo/` to your build file, to get a third-party jar that is not yet in Maven Central (this is already done in WALA-start).  We're also working on fixing this.
+Note that there are some code examples that only appear in `test` packages in the WALA repository, and you still need to clone the repo to get those.  We are working on adding more examples to WALA-start so this becomes unnecessary.
 
 For now, the remainder of this document describes how to pull WALA source from Github and build it.  As we migrate more examples to WALA-start, the need for building from source should become less and less.
 
