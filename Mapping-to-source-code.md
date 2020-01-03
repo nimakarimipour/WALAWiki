@@ -42,7 +42,7 @@ From Slices to source line numbers
 Given a `Statement` that came from a Java bytecode file (via Shrike),
 you can get the line number in the original source with the following:
 
-`<pre>
+```java
 if (s.getKind() == Statement.Kind.NORMAL) { // ignore special kinds of statements
   int bcIndex, instructionIndex = ((NormalStatement) s).getInstructionIndex();
   try {
@@ -59,19 +59,19 @@ if (s.getKind() == Statement.Kind.NORMAL) { // ignore special kinds of statement
     System.err.println(e.getMessage());
   }
 }
-</pre>`
+```
 
 For `Statement`s that came from a Java source file thru cast, there is
 no bytecode index, so (despite what the javadoc may lead you to believe)
 the parameter to `getLineNumber()` is simply an instruction index:
 
-`<pre>
+```java
 if (s.getKind() == Statement.Kind.NORMAL) {
   int instructionIndex = ((NormalStatement) s).getInstructionIndex();
   int lineNum = ((ConcreteJavaMethod) s.getNode().getMethod()).getLineNumber(instructionIndex);
   System.out.println("Source line number = " + lineNum );
 }
-</pre>`
+```
 
 This is useful when investigating the output of
 [[slicing|Slicer]].
@@ -82,10 +82,10 @@ Getting the .jar file for an IClass
 If you have an IClass klass representing a .class file inside a .jar,
 you can do the following to figure out the .jar file name:
 
-`<pre>
+```java
  ShrikeClass shrikeKlass = (ShrikeClass) klass;
  JarFileEntry moduleEntry = (JarFileEntry) shrikeKlass.getModuleEntry();
  String jarFile = moduleEntry.getJarFile();
-</pre>`
+```
 
 Note that the casts may fail if it's not a .class file inside a .jar.
