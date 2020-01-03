@@ -27,11 +27,14 @@ From IR instruction to bytecode index / source line number
 
 Given the index `i` of some `SSAInstruction` in an `IR ir` produced from
 bytecode, you can get the corresponding bytecode index and source line
-number as follows: `<pre>
+number as follows:
+```java
     IBytecodeMethod method = (IBytecodeMethod)ir.getMethod();
     int bytecodeIndex = method.getBytecodeIndex(i);
     int sourceLineNum = method.getLineNumber(bytecodeIndex);
-</pre>` Note that source line information may not always be available.
+```
+
+Note that source line information may not always be available.
 
 From Slices to source line numbers 
 ----------------------------------
