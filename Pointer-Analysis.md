@@ -111,7 +111,9 @@ follows:
     Object o4 = new java.lang.Integer();
     foo(o3,o4);
 
-So, the pointer analysis will create `InstanceKey` abstractions
+WALA generates synthetic IR instructions representing the above code in 
+a "fake root method" that invokes all the entrypoints; see [`FakeRootMethod`](https://wala.github.io/javadoc/com/ibm/wala/ipa/callgraph/impl/FakeRootMethod.html).  
+Given that IR, the pointer analysis will create `InstanceKey` abstractions
 according to the governing `HeapModel`, as if the program encounters
 allocations of the specified types in the `FakeRootMethod`.
 
