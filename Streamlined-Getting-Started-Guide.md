@@ -4,11 +4,10 @@ This is a streamlined guide to getting started with WALA, based on use of [Gradl
 
 * [Git](https://git-scm.com/)
 * [Java](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) version 7 or higher
-* [Gradle](https://gradle.org/), tested on version 2.14.1.  Later versions should work, earlier versions might work.
 
 On Mac OS, if you have [Homebrew](http://brew.sh/) installed, you can get the above dependencies by running:
 ```
-brew cask install java && brew install gradle
+brew cask install java
 ```
 TODO add instructions for Ubuntu
 
@@ -21,7 +20,7 @@ git clone https://github.com/msridhar/WALA-start
 Then, compile the Java code:
 ```
 cd WALA-start
-gradle compileJava
+./gradlew compileJava
 ```
 The first time you run this command, gradle will download the WALA jars and their dependencies, which will take some time.
 
@@ -31,6 +30,6 @@ That's basically it!  You can use the sample analyses under `src/main/java` to g
 
 If you'd like to use Eclipse for development, first run the following command in the `WALA-start` directory:
 ```
-gradle eclipse
+./gradlew eclipse
 ```
 This generates the appropriate Eclipse metadata.  Once you've done that, you should be able to import `WALA-start` as an Eclipse project.
