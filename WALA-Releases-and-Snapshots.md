@@ -10,7 +10,7 @@ WALA's Travis CI configuration is set up to upload a new snapshot build to Sonat
 
 If you have local changes to WALA, you can install them as a snapshot build into your local Maven repository with the following command:
 ```
-./gradlew install
+./gradlew publishToMavenLocal
 ```
 
 You can then import this snapshot build from other repositories.  For Gradle, you can use the local Maven repository by writing:
@@ -68,7 +68,7 @@ git tag -a vX.Y.Z -m "Version X.Y.Z"
 
 Upload the release files to the staging area for Maven Central:
 ```
-./gradlew -Dorg.gradle.parallel=false clean uploadArchives
+./gradlew -Dorg.gradle.parallel=false clean publishAllPublicationsToMavenRepository
 ```
 This step may take several minutes.  Also, it will sign the archives, so if you don't have gpg set up correctly, it will fail.  The `-Dorg.gradle.parallel=false` is important, to prevent parallel uploads of artifacts, which doesn't work.
 
