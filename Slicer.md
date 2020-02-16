@@ -92,7 +92,7 @@ Once the slice is calculated, we can analyze the statements more
 (including determining the original source line numbers). See the
 [[Intermediate Representation (IR)]] page.
 
-`<pre>
+```java
     public static CallGraphBuilder doSlicing(String appJar) throws WalaException {
       // create an analysis scope representing the appJar as a J2SE application
         AnalysisScope scope = AnalysisScopeReader.makeJavaBinaryAnalysisScope(appJar,CallGraphTestUtil.REGRESSION_EXCLUSIONS);
@@ -161,7 +161,7 @@ Once the slice is calculated, we can analyze the statements more
         System.err.println(s);
       }
     }
-</pre>`
+```
 
 ### Warning: exclusion of copy statements from slice
 
