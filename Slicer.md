@@ -67,11 +67,16 @@ The available `ControlDependence` options are:
 -   `FULL` : track all control dependence
 -   `NONE` : ignore all control dependence.
 
+Performance Tips
+----------------
+
+As with [pointer analysis](https://github.com/wala/WALA/wiki/Pointer-Analysis#improving-scalability), scaling the slicer to modern Java programs and libraries is difficult (see further discussion in [the thin slicing paper](https://manu.sridharan.net/files/pldi07.pdf)).  Scalability is difficult the more precise the configuration and the more dependencies are tracked; e.g., slicing while tracking heap-based data dependencies does not scale well.  To improve performance, slice with the minimum dependencies needed (e.g., `NO_HEAP` for data and `NONE` for control).  Also see the [pointer analysis scalability tips](https://github.com/wala/WALA/wiki/Pointer-Analysis#improving-scalability) as they can also help (e.g., more exclusions will help slicer scalability as well).  
+
 Thin Slicing
 ------------
 
 To execute context-sensitive **Thin Slicing**, as described by [this
-paper](https://researcher.ibm.com/researcher/files/us-msridhar/pldi07.pdf),
+paper](https://manu.sridharan.net/files/pldi07.pdf),
 we can use the `DataDependenceOptions.NO_BASE_PTRS` and
 `ControlDependence.NONE` options. To perform optimized
 context-<em>insensitive</em> thin slicing, see the
